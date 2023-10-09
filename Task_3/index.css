@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.innerContainer {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  column-gap: 2rem;
+  color: rgb(131, 129, 129);
+}
+input,
+select,
+#result {
+  border: 0;
+  height: 2rem;
+  width: 10rem;
+  border-bottom: 1px solid silver;
+}
+select {
+  cursor: pointer;
+}
+input:focus,
+select:focus {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid blue;
+}
+.innerContainer .results {
+  grid-column: 1 / span 2;
+  width: 100%;
+}
+.innerContainer #result {
+  width: 100%;
+}
+.innerContainer button {
+  grid-column: 1 / span 2;
+  width: 100%;
+  margin-top: 2rem;
+  height: 3rem;
+  background-color: rgb(48, 48, 224);
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

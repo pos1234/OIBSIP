@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Temperature Converter</h1>
+      <div class="innerContainer">
+        <div>
+          <p>Degrees</p>
+          <input type="number" id="degreesInput" />
+        </div>
+        <div>
+          <p>Type</p>
+          <select id="typeSelect">
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celcius</option>
+          </select>
+        </div>
+        <div class="results">
+          <p>Result</p>
+          <p id="result"></p>
+        </div>
+        <button onclick="convertTemperature()">Convert</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function convertTemperature() {
+    const degrees = parseFloat(document.getElementById("degreesInput").value);
+    const type = document.getElementById("typeSelect").value;
+    let result;
+    if (!degrees) {
+      document.getElementById("result").textContent = "Please input a value";
+    } else if (type === "fahrenheit") {
+      result = (degrees * 9) / 5 + 32;
+      document.getElementById("result").textContent = result + "°F";
+    } else if (type === "celsius") {
+      result = ((degrees - 32) * 5) / 9;
+      document.getElementById("result").textContent = result + "°C";
+    }
+  }
+</script>
